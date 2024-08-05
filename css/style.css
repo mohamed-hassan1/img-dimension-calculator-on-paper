@@ -1,4 +1,4 @@
-.form-container .form-table {
+.form-container .inner-form {
   width: fit-content;
   border-right: 1px solid #ddd;
 }
@@ -144,13 +144,21 @@
 
 /* Start Responsive */
 
+@media only screen and (min-width: 992px) {
+  .form-container {
+    flex: 0 0 296px;
+  }
+}
+
 @media only screen and (max-width: 991px) {
   .form-container {
     display: flex;
     justify-content: center;
   }
-  .form-container .form-table {
+  .form-container .inner-form {
     border-right: none;
+  }
+  .form-container .form-table {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 35px;
