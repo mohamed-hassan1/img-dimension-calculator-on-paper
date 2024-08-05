@@ -20,15 +20,17 @@ function init() {
   // Arrow Buttons
   UI_form.addEventListener('click', arrowFun);
   // Width Input
-  IN_width.addEventListener('input', widthIn);
+  IN_width.addEventListener('input', fieldsIn);
+  IN_width.addEventListener('keyup', fieldsIn);
   IN_width.addEventListener('blur', validateIn);
   // Height Input
-  IN_height.addEventListener('input', heightIn);
+  IN_height.addEventListener('input', fieldsIn);
+  IN_height.addEventListener('keyup', fieldsIn);
   IN_height.addEventListener('blur', validateIn);
   // Gap Input
-  IN_gap.addEventListener('input', gapIn);
+  IN_gap.addEventListener('input', fieldsIn);
+  IN_gap.addEventListener('keyup', fieldsIn);
   IN_gap.addEventListener('blur', validateIn);
-
 
 }
 
@@ -62,42 +64,25 @@ function arrowFun(e) {
 }
 
 // Fields Inputs
-// Width
-function widthIn() {
-  if (Number(this.value) < IN_val['width'][1]) {
-    this.parentElement.querySelector('.left-arrow').classList.add('disabled');
-  } else if (Number(this.value) > IN_val['width'][1] && this.parentElement.querySelector('.left-arrow').classList.contains('disabled')) {
-    this.parentElement.querySelector('.left-arrow').classList.remove('disabled')
-  }
+function fieldsIn(e) {
+  for (let x in IN_val) {
+    if (this === IN_val[x][0] && Number(this.value) < IN_val[x][1]) {
+      if (e.keycode === 40 || e.which === 40) {
+        this.value = IN_val[x][1];
+      }
+      this.parentElement.querySelector('.left-arrow').classList.add('disabled');
+    } else if (this === IN_val[x][0] && (Number(this.value) > IN_val[x][1] && this.parentElement.querySelector('.left-arrow').classList.contains('disabled'))) {
+      this.parentElement.querySelector('.left-arrow').classList.remove('disabled');
+    }
+  } 
 }
 
-// Height
-function heightIn() {
-  if (Number(this.value) < IN_val['height'][1]) {
-    this.parentElement.querySelector('.left-arrow').classList.add('disabled');
-  } else if (Number(this.value) > IN_val['height'][1] && this.parentElement.querySelector('.left-arrow').classList.contains('disabled')) {
-    this.parentElement.querySelector('.left-arrow').classList.remove('disabled')
-  }
-}
-
-// Gap
-function gapIn() {
-  if (Number(this.value) < IN_val['gap'][1]) {
-    this.parentElement.querySelector('.left-arrow').classList.add('disabled');
-  } else if (Number(this.value) > IN_val['gap'][1] && this.parentElement.querySelector('.left-arrow').classList.contains('disabled')) {
-    this.parentElement.querySelector('.left-arrow').classList.remove('disabled')
-  }
-}
-
-function validateIn() {
-  //let val = Number(ele.value);
-  
+function validateIn() {  
   for (let x in IN_val) {
     if (
       this === IN_val[x][0] && Number(this.value) < IN_val[x][1] ||
       this === IN_val[x][0] && Number(this.value) === 0
     ) {
-      //console.log(this.value, this)
       this.value = IN_val[x][1];
       this.parentElement.querySelector('.left-arrow').classList.add('disabled');
     }
