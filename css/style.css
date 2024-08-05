@@ -72,6 +72,11 @@
   transform: scale(1.05);
 }
 
+.form-container .arrow-btn.disabled {
+  background-color: #ededed;
+  color: #c1c1c1;
+}
+
 .form-container .left-arrow i {
   padding-right: 3px;
 }
