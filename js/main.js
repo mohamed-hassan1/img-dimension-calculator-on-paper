@@ -64,37 +64,42 @@ function arrowFun(e) {
 // Fields Inputs
 // Width
 function widthIn() {
-  // let valid = validateIn(this, val.width);
-  // if (valid) {
-
-  // }
+  if (Number(this.value) < IN_val['width'][1]) {
+    this.parentElement.querySelector('.left-arrow').classList.add('disabled');
+  } else if (Number(this.value) > IN_val['width'][1] && this.parentElement.querySelector('.left-arrow').classList.contains('disabled')) {
+    this.parentElement.querySelector('.left-arrow').classList.remove('disabled')
+  }
 }
 
 // Height
 function heightIn() {
-  // let valid = validateIn(this, val.height);
-  // if (valid) {
-    
-  // }
+  if (Number(this.value) < IN_val['height'][1]) {
+    this.parentElement.querySelector('.left-arrow').classList.add('disabled');
+  } else if (Number(this.value) > IN_val['height'][1] && this.parentElement.querySelector('.left-arrow').classList.contains('disabled')) {
+    this.parentElement.querySelector('.left-arrow').classList.remove('disabled')
+  }
 }
 
 // Gap
 function gapIn() {
-  // let valid = validateIn(this, val.gap);
-  // if (valid) {
-    
-  // }
+  if (Number(this.value) < IN_val['gap'][1]) {
+    this.parentElement.querySelector('.left-arrow').classList.add('disabled');
+  } else if (Number(this.value) > IN_val['gap'][1] && this.parentElement.querySelector('.left-arrow').classList.contains('disabled')) {
+    this.parentElement.querySelector('.left-arrow').classList.remove('disabled')
+  }
 }
 
 function validateIn() {
   //let val = Number(ele.value);
+  
   for (let x in IN_val) {
     if (
       this === IN_val[x][0] && Number(this.value) < IN_val[x][1] ||
-      this === IN_val[x][0] && Number(this.value) === ''
-
+      this === IN_val[x][0] && Number(this.value) === 0
     ) {
+      //console.log(this.value, this)
       this.value = IN_val[x][1];
+      this.parentElement.querySelector('.left-arrow').classList.add('disabled');
     }
   }
   this.value = parseFloat(this.value);
