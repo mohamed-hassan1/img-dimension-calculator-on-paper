@@ -1,9 +1,14 @@
+.form-container .form-table {
+  width: fit-content;
+  border-right: 1px solid #ddd;
+}
+
 .form-container .form-group:not(:last-child) {
-  padding-right: 25px;
+  padding: 0 45px 25px 0;
 }
 
 .form-container label {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
@@ -16,7 +21,8 @@
   border: none;
   box-shadow: none;
   outline: none;
-  padding: 5px;
+  padding: 5px 8px;
+  margin: 0 8px;
   font-weight: 500;
   background-color: #fbfbfb;
   border-radius: 0px;
@@ -40,4 +46,85 @@
 .form-container input.form-control:active {
   background-color: #f5f5f5;
   border-bottom-color: #333;
+}
+
+.form-container .arrow-btn {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  font-size: 18px;
+  color: #212529;
+  background-color: #fbfbfb;
+  box-shadow: 1.5px 1.5px 4px 0px rgba(0,0,0,.12);
+  transition: all 0.18s linear;
+}
+
+.form-container .arrow-btn:hover {
+  background-color: #efefef;
+}
+
+.form-container .arrow-btn:active {
+  transform: scale(1.05);
+}
+
+.form-container .left-arrow i {
+  padding-right: 3px;
+}
+
+.form-container .right-arrow i {
+  padding-left: 3px;
+}
+
+.paper-container .box .outer {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.paper-container .box .inner {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.paper-container .paper-row:not(:last-child) {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.paper-container .paper-row:last-child {
+  padding-bottom: 40px;
+}
+
+.paper-container .a4 .outer {
+  max-width: 297px;
+  height: 210px;
+}
+
+.paper-container .a3 .outer {
+  max-width: 420px;
+  height: 297px;
+}
+
+.paper-container .extended .outer {
+  max-width: 487.7px;
+  height: 330px;
+}
+
+.paper-container .embossed .outer {
+  max-width: 480px;
+  height: 330px;
+}
+
+.paper-container .dimensions {
+  font-size: 14px;
+  color: #747474;
+}
+
+.paper-container .res {
+  color: #05a305;
 }

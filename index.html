@@ -23,54 +23,148 @@
 </head>
 <body>
   <div class="container">
-    <section class="form-container pt-5 mt-2">
-      <!-- Start Heading -->
-      <div class="heading text-center pb-5">
+    <div class="row">
+
+      <!-- ** Start Heading ** -->
+      <div class="col-12 text-center pt-5 mt-2 pb-5">
         <h1>Image Dimensions Calculator on Paper</h1>
       </div>
-      <div class="form-table d-flex">
-        <div class="form-group">
-          <label for="img_width">Image width <span>(mm)</span>:</label>
-          <div class="in-control d-flex">
-            <button class="btn left-arrow">
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <input type="number" name="" id="img_width" class="form-control">
-            <button class="btn right-arrow">
-              <i class="bi bi-chevron-right"></i>
-            </button>
+
+      <!-- ** Start Form Container ** -->
+      <div class="form-container col-auto">
+        <div class="form-table">
+          <div class="form-group">
+            <label for="img_width">Image width <span>(mm)</span>:</label>
+            <div class="in-control d-flex">
+              <button class="btn left-arrow arrow-btn d-flex justify-content-center align-items-center">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <input type="number" name="" id="img_width" class="form-control" value="10">
+              <button class="btn right-arrow arrow-btn d-flex justify-content-center align-items-center">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="img_height">Image height <span>(mm)</span>:</label>
-          <div class="in-control d-flex">
-            <button class="btn left-arrow">
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <input type="number" name="" id="img_height" class="form-control">
-            <button class="btn right-arrow">
-              <i class="bi bi-chevron-right"></i>
-            </button>
+          <div class="form-group">
+            <label for="img_height">Image height <span>(mm)</span>:</label>
+            <div class="in-control d-flex">
+              <button class="btn left-arrow arrow-btn d-flex justify-content-center align-items-center">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <input type="number" name="" id="img_height" class="form-control" value="10">
+              <button class="btn right-arrow arrow-btn d-flex justify-content-center align-items-center">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="img_gap">Image gap <span>(mm)</span>:</label>
-          <div class="in-control d-flex">
-            <button class="btn left-arrow">
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <input type="number" name="" id="img_gap" class="form-control">
-            <button class="btn right-arrow">
-              <i class="bi bi-chevron-right"></i>
-            </button>
+          <div class="form-group">
+            <label for="img_gap">Image gap <span>(mm)</span>:</label>
+            <div class="in-control d-flex">
+              <button class="btn left-arrow arrow-btn d-flex justify-content-center align-items-center">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <input type="number" name="" id="img_gap" class="form-control" value="0">
+              <button class="btn right-arrow arrow-btn d-flex justify-content-center align-items-center">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <hr>
-    <section class="paper-container">
-      
-    </section>
+
+      <!-- ** Start Paper Container ** -->
+      <div class="paper-container col">
+        <div class="row paper-row">
+          <!-- Start A4 Paper -->
+          <div class="box a4 col-6 d-flex flex-column align-items-center">
+            <p class="fw-medium text-center">A4</p>
+            <div class="outer w-100">
+              <div class="inner w-100 h-100">
+                <div class="content d-flex">
+                  <div class="paper"></div>
+                  <div class="paper"></div>
+                </div>
+              </div>
+            </div>
+            <div class="info text-center pt-3">
+              <p class="mb-0 fw-medium">
+                <span class="dimensions">(297x210 mm, margin: 287x200 mm)</span>
+              </p>
+              <p class="mb-0 fw-medium">
+                <span>Number: <span class="num res">2 images</span>, Position: <span class="position res">Vertical</span></span>
+              </p>
+            </div>
+          </div>
+          <!-- End A4 Paper -->
+          <!-- Start A3 Paper -->
+          <div class="box a3 col-6 d-flex flex-column align-items-center">
+            <p class="fw-medium text-center">A3</p>
+            <div class="outer w-100">
+              <div class="inner w-100 h-100">
+                <div class="content d-flex">
+                  <div class="paper"></div>
+                  <div class="paper"></div>
+                </div>
+              </div>
+            </div>
+            <div class="info text-center pt-3">
+              <p class="mb-0 fw-medium">
+                <span class="dimensions">(420x297 mm, margin: 410x287 mm)</span>
+              </p>
+              <p class="mb-0 fw-medium">
+                <span>Number: <span class="num res">2 images</span>, Position: <span class="position res">Vertical</span></span>
+              </p>
+            </div>
+          </div>
+          <!-- End A3 Paper -->
+        </div>
+        <div class="row paper-row">
+          <!-- Start Extended Paper -->
+          <div class="box extended col-6 d-flex flex-column align-items-center">
+            <p class="fw-medium text-center">Extended</p>
+            <div class="outer w-100">
+              <div class="inner w-100 h-100">
+                <div class="content d-flex">
+                  <div class="paper"></div>
+                  <div class="paper"></div>
+                </div>
+              </div>
+            </div>
+            <div class="info text-center pt-3">
+              <p class="mb-0 fw-medium">
+                <span class="dimensions">(487.7x330 mm, margin: 477.7x320 mm)</span>
+              </p>
+              <p class="mb-0 fw-medium">
+                <span>Number: <span class="num res">2 images</span>, Position: <span class="position res">Vertical</span></span>
+              </p>
+            </div>
+          </div>
+          <!-- End Extended Paper -->
+          <!-- Start Embossed Paper -->
+          <div class="box embossed col-6 d-flex flex-column align-items-center">
+            <p class="fw-medium text-center">Embossed</p>
+            <div class="outer w-100">
+              <div class="inner w-100 h-100">
+                <div class="content d-flex">
+                  <div class="paper"></div>
+                  <div class="paper"></div>
+                </div>
+              </div>
+            </div>
+            <div class="info text-center pt-3">
+              <p class="mb-0 fw-medium">
+                <span class="dimensions">(480x330 mm, margin: 470x320 mm)</span>
+              </p>
+              <p class="mb-0 fw-medium">
+                <span>Number: <span class="num res">2 images</span>, Position: <span class="position res">Vertical</span></span>
+              </p>
+            </div>
+          </div>
+          <!-- End Embossed Paper -->
+        </div>
+      </div>
+    </div>
+    
   </div>
 
   <!-- *** Start Scripts *** -->
