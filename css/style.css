@@ -1,0 +1,43 @@
+.form-container .form-group:not(:last-child) {
+  padding-right: 25px;
+}
+
+.form-container label {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-container label span {
+  font-size: 14px;
+  color: #747474;
+}
+
+.form-container input.form-control {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 5px;
+  font-weight: 500;
+  background-color: #fbfbfb;
+  border-radius: 0px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  transition: all .18s linear;
+  -moz-appearance: textfield;
+  max-width: 140px;
+  width: 100%;
+}
+
+.form-container input[type='number']::-webkit-outer-spin-button,
+.form-container input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.form-container input.form-control:hover,
+.form-container input.form-control:focus,
+.form-container input.form-control:active {
+  background-color: #f5f5f5;
+  border-bottom-color: #333;
+}

@@ -15,6 +15,7 @@
 
   <!-- Start Links -->
   <!-- Bootstrap  5.3.3 -->
+  <link rel="stylesheet" href="css/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- Main Style -->
   <link rel="stylesheet" href="css/style.css">
@@ -29,22 +30,46 @@
       </div>
       <div class="form-table d-flex">
         <div class="form-group">
-          <label for="img_width">Image width:</label>
-          <input type="number" name="" id="img_width" class="form-control">
+          <label for="img_width">Image width <span>(mm)</span>:</label>
+          <div class="in-control d-flex">
+            <button class="btn left-arrow">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <input type="number" name="" id="img_width" class="form-control">
+            <button class="btn right-arrow">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
         </div>
         <div class="form-group">
-          <label for="img_height">Image height:</label>
-          <input type="number" name="" id="img_height" class="form-control">
+          <label for="img_height">Image height <span>(mm)</span>:</label>
+          <div class="in-control d-flex">
+            <button class="btn left-arrow">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <input type="number" name="" id="img_height" class="form-control">
+            <button class="btn right-arrow">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
         </div>
         <div class="form-group">
-          <label for="img_gap">Image gap:</label>
-          <input type="number" name="" id="img_gap" class="form-control">
+          <label for="img_gap">Image gap <span>(mm)</span>:</label>
+          <div class="in-control d-flex">
+            <button class="btn left-arrow">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <input type="number" name="" id="img_gap" class="form-control">
+            <button class="btn right-arrow">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
     <hr>
     <section class="paper-container">
-  
+      
     </section>
   </div>
 
