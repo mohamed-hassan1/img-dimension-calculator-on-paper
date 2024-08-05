@@ -56,6 +56,7 @@
   border-radius: 100%;
   width: 35px;
   height: 35px;
+  flex: 0 0 35px;
   font-size: 18px;
   color: #212529;
   background-color: #fbfbfb;
@@ -127,4 +128,46 @@
 
 .paper-container .res {
   color: #05a305;
+}
+
+.paper-container .outer .paper {
+  width: 100px;
+  height: 70px;
+  background-color: #6bd0f7;
+  margin: 0 2px 2px 0;
+}
+
+/* Start Responsive */
+
+@media only screen and (max-width: 991px) {
+  .form-container {
+    display: flex;
+    justify-content: center;
+  }
+  .form-container .form-table {
+    border-right: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 35px;
+    text-align: center;
+  }
+  .form-container .form-table input {
+    text-align: center;
+  }
+  .form-container .form-group:not(:last-child) {
+    padding: 0 25px 25px 0;
+  }
+  .form-container input.form-control {
+    max-width: 110px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .form-container .form-table {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .form-container .form-group:not(:last-child) {
+    padding-right: 0px;
+  }
 }
