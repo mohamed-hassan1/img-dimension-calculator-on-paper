@@ -86,14 +86,14 @@
 }
 
 .paper-container .box .outer {
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  padding: 10px;
+  box-shadow: 0px 0px 0px 1px #f53c3c;
+  border-radius: 2px;
+  padding: 5px;
 }
 
 .paper-container .box .inner {
-  border: 1px solid #ddd;
-  border-radius: 3px;
+  box-shadow: 0px 0px 0px 1px #000;
+  border-radius: 2px;
 }
 
 .paper-container .paper-row:not(:last-child) {
@@ -108,22 +108,22 @@
 
 .paper-container .a4 .outer {
   max-width: 297px;
-  height: 210px;
+  min-height: 210px;
 }
 
 .paper-container .a3 .outer {
   max-width: 420px;
-  height: 297px;
+  min-height: 297px;
 }
 
 .paper-container .extended .outer {
   max-width: 487.7px;
-  height: 330px;
+  min-height: 330px;
 }
 
 .paper-container .embossed .outer {
   max-width: 480px;
-  height: 330px;
+  min-height: 330px;
 }
 
 .paper-container .dimensions {
@@ -136,10 +136,7 @@
 }
 
 .paper-container .outer .paper {
-  width: 100px;
-  height: 70px;
   background-color: #6bd0f7;
-  margin: 0 2px 2px 0;
 }
 
 /* Start Responsive */
@@ -150,7 +147,23 @@
   }
 }
 
+@media only screen and (max-width: 1199px) {
+  .paper-container .a4 .outer {
+    max-width: 240px;
+  }
+  .paper-container .a3 .outer {
+    max-width: 280px;
+  }
+  .paper-container .extended .outer {
+    max-width: 305.7px;
+  }
+  .paper-container .embossed .outer {
+    max-width: 298px;
+  }
+}
+
 @media only screen and (max-width: 991px) {
+  .form-container .in-control,
   .form-container {
     display: flex;
     justify-content: center;
@@ -161,14 +174,16 @@
   .form-container .form-table {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 35px;
+    padding-bottom: 25px;
     text-align: center;
+    justify-content: center;
   }
   .form-container .form-table input {
     text-align: center;
   }
-  .form-container .form-group:not(:last-child) {
-    padding: 0 25px 25px 0;
+  .form-container .form-group:not(:last-child),
+  .form-container .form-group {
+    padding: 0 12.5px 25px 12.5px;
   }
   .form-container input.form-control {
     max-width: 110px;
@@ -179,8 +194,5 @@
   .form-container .form-table {
     justify-content: center;
     flex-direction: column;
-  }
-  .form-container .form-group:not(:last-child) {
-    padding-right: 0px;
   }
 }

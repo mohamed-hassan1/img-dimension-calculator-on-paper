@@ -2,7 +2,9 @@
 const IN_width = document.querySelector('#img_width'),
       IN_height = document.querySelector('#img_height'),
       IN_gap = document.querySelector('#img_gap'),
-      UI_form = document.querySelector('.form-table')
+      UI_form = document.querySelector('.form-table'),
+      UI_paperContainer = document.querySelector('.paper-container'),
+      UI_paperBox = UI_paperContainer.querySelectorAll('.box');
 
 let IN_val = {
   width: [IN_width, Number(IN_width.value) || 10],
@@ -16,6 +18,9 @@ document.addEventListener('DOMContentLoaded', init);
 
 // *** Global Functions ***
 function init() {
+
+  // Paper Init
+  addPaper();
 
   // Arrow Buttons
   UI_form.addEventListener('click', arrowFun);
@@ -77,6 +82,7 @@ function fieldsIn(e) {
   } 
 }
 
+// Validate Inputs
 function validateIn() {  
   for (let x in IN_val) {
     if (
@@ -90,3 +96,48 @@ function validateIn() {
   this.value = parseFloat(this.value);
 }
 
+// Add Paper Elements
+
+function addPaper() {
+  UI_paperBox.forEach((item) => {
+    let boxWidth = Number(item.getAttribute('data-width')),
+        boxHeight = Number(item.getAttribute('data-height')),
+        boxMargin = Number(item.getAttribute('data-margin')),
+        safeWidth = boxWidth - boxMargin,
+        safeHeight = boxHeight - boxMargin,
+        gap = Number(IN_val['gap'][1]),
+        getWidth = parseInt(safeWidth / (IN_val['width'][1] + gap)),
+        getHeight = parseInt(safeHeight / (IN_val['height'][1] + gap)),
+        innerContent = item.querySelector('.inner .content'),
+        imgWidth = ((IN_val['width'][1] / safeWidth) * 100).toFixed(2),
+        imgHeight = (IN_val['height'][1]),
+
+        pos = 'Horizontal', paperLen;
+
+    if (getWidth === 0) { // Vertical
+      getWidth = 1;
+      imgWidth = 100;
+      pos = 'Vertical';
+    } else if (getHeight === 0) { // Horizontal
+      getHeight = 1;
+      imgHeight = 100;
+      pos = 'Horizontal';
+    }
+
+    paperLen = getWidth * getHeight
+
+    for (let i = 0; i < paperLen; i++) {
+      let div = document.createElement('div');
+      div.className = 'paper';
+      div.style.width = imgWidth + '%';
+      div.style.flex =  '0 0 ' + imgWidth + '%';
+      div.style.height = imgHeight + 'px';
+      div.style.marginRight = gap + 'px';
+      div.style.marginBottom = gap + 'px';
+      innerContent.appendChild(div);
+    }
+
+
+    
+  });
+}
