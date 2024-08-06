@@ -62,10 +62,12 @@ function arrowFun(e) {
           if (Number(IN_ele.value) - 1  < IN_val[x][1]) {
             prevBtn.classList.add('disabled');
           }
+          addPaper();
         }
       }
     } else {
       IN_ele.value = Number(IN_ele.value) + 1;
+      addPaper();
     }
   }
 }
@@ -82,6 +84,7 @@ function fieldsIn(e) {
       this.parentElement.querySelector('.left-arrow').classList.remove('disabled');
     }
   } 
+  addPaper();
 }
 
 // Validate Inputs
@@ -96,6 +99,7 @@ function validateIn() {
     }
   }
   this.value = parseFloat(this.value);
+  addPaper();
 }
 
 // Add Paper Elements
@@ -113,7 +117,7 @@ function addPaper() {
         getHeight = parseInt(safeHeight / (heightNum + gap)),
         innerContent = item.querySelector('.inner .content'),
         imgWidth = ((widthNum / safeWidth) * 100).toFixed(2),
-        imgHeight = heightNum,
+        imgHeight = heightNum + 'px',
         info = item.querySelector('.info'),
         imgNum = info.querySelector('.num'),
         posEle = info.querySelector('.position'),
@@ -125,18 +129,20 @@ function addPaper() {
       pos = 'Vertical';
     } else if (getHeight === 0) { // Horizontal
       getHeight = 1;
-      imgHeight = 100;
+      imgHeight = '100%';
       pos = 'Horizontal';
     }
 
     paperLen = getWidth * getHeight
+
+    innerContent.innerHTML = '';
 
     for (let i = 0; i < paperLen; i++) {
       let div = document.createElement('div');
       div.className = 'paper';
       div.style.width = imgWidth + '%';
       div.style.flex =  '0 0 ' + imgWidth + '%';
-      div.style.height = imgHeight + 'px';
+      div.style.height = imgHeight;
       div.style.marginRight = gap + 'px';
       div.style.marginBottom = gap + 'px';
       innerContent.appendChild(div);
