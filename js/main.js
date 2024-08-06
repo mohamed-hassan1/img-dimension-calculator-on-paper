@@ -12,6 +12,8 @@ let IN_val = {
   gap: [IN_gap, Number(IN_gap.value) || 0]
 }
 
+let IN_paper = {}
+
 // *** Init ***
 document.addEventListener('DOMContentLoaded', init);
 
@@ -97,7 +99,6 @@ function validateIn() {
 }
 
 // Add Paper Elements
-
 function addPaper() {
   UI_paperBox.forEach((item) => {
     let boxWidth = Number(item.getAttribute('data-width')),
@@ -105,13 +106,17 @@ function addPaper() {
         boxMargin = Number(item.getAttribute('data-margin')),
         safeWidth = boxWidth - boxMargin,
         safeHeight = boxHeight - boxMargin,
-        gap = Number(IN_val['gap'][1]),
-        getWidth = parseInt(safeWidth / (IN_val['width'][1] + gap)),
-        getHeight = parseInt(safeHeight / (IN_val['height'][1] + gap)),
+        gap = Number(IN_val['gap'][0].value),
+        widthNum = Number(IN_val['width'][0].value),
+        heightNum = Number(IN_val['height'][0].value),
+        getWidth = parseInt(safeWidth / (widthNum + gap)),
+        getHeight = parseInt(safeHeight / (heightNum + gap)),
         innerContent = item.querySelector('.inner .content'),
-        imgWidth = ((IN_val['width'][1] / safeWidth) * 100).toFixed(2),
-        imgHeight = (IN_val['height'][1]),
-
+        imgWidth = ((widthNum / safeWidth) * 100).toFixed(2),
+        imgHeight = heightNum,
+        info = item.querySelector('.info'),
+        imgNum = info.querySelector('.num'),
+        posEle = info.querySelector('.position'),
         pos = 'Horizontal', paperLen;
 
     if (getWidth === 0) { // Vertical
@@ -137,7 +142,9 @@ function addPaper() {
       innerContent.appendChild(div);
     }
 
+    // Asian values
+    posEle.textContent = pos;
+    paperLen <= 1? imgNum.textContent = '1 image' : imgNum.textContent = paperLen + ' images';
 
-    
   });
 }
